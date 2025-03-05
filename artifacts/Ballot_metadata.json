@@ -205,11 +205,11 @@
 	},
 	"sources": {
 		"Voting Sytem.sol": {
-			"keccak256": "0x87463e4beccc34382f795cf3f07704f4ec0acaa8d3467ce2e54ee306c054a93b",
+			"keccak256": "0xd065a3fb16b8500f5589d6c76d64f204b136f478990ac6844fa54ab3a636551c",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://b767ec45e889847e0378eb351fe2dd096921536aca0a1550fdd3499562e04a41",
-				"dweb:/ipfs/QmdXcx1c1AzgAjLSbdMXz2F85uvD1bJcFa8K9UbJeNqwZy"
+				"bzz-raw://a5a0a6d90f09b6229811bb142ff3b529e8a193d1d7284d7a3c8cc30092906cbf",
+				"dweb:/ipfs/QmXj59UxEJFiposCpYpYVBK2pWqvQqt9yFXLxHo6J4Mnno"
 			]
 		}
 	},
