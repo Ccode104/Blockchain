@@ -17,14 +17,71 @@
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
 				"inputs": [
 					{
-						"internalType": "string[]",
-						"name": "candidateNames",
-						"type": "string[]"
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
 					}
 				],
-				"name": "addCandidates",
+				"name": "CandidateAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "ElectionEnded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "ElectionStarted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "voter",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "candidate",
+						"type": "uint256"
+					}
+				],
+				"name": "Voted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "voter",
+						"type": "address"
+					}
+				],
+				"name": "VoterRegistered",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "candidateName",
+						"type": "string"
+					}
+				],
+				"name": "addCandidate",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -74,14 +131,33 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
+				"inputs": [],
+				"name": "getCurrentVotes",
+				"outputs": [
 					{
-						"internalType": "address",
-						"name": "voter",
-						"type": "address"
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "voteCount",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Ballot.Candidate[]",
+						"name": "",
+						"type": "tuple[]"
 					}
 				],
-				"name": "giveRightToVote",
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "registerAsVoter",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -165,20 +241,7 @@
 		"devdoc": {
 			"details": "Implements voting process along with vote delegation",
 			"kind": "dev",
-			"methods": {
-				"giveRightToVote(address)": {
-					"details": "Give 'voter' the right to vote on this ballot. May only be called by 'chairperson'.",
-					"params": {
-						"voter": "address of voter"
-					}
-				},
-				"vote(uint256)": {
-					"details": "Give your vote (including votes delegated to you) to candidate 'candidates[candidate].name'.",
-					"params": {
-						"candidate": "index of candidate in the candidates array"
-					}
-				}
-			},
+			"methods": {},
 			"title": "Ballot",
 			"version": 1
 		},
@@ -205,11 +268,11 @@
 	},
 	"sources": {
 		"Voting Sytem.sol": {
-			"keccak256": "0xd065a3fb16b8500f5589d6c76d64f204b136f478990ac6844fa54ab3a636551c",
+			"keccak256": "0x9077cfeb22dfca752622da32bb926faecb8414e7e5ed8b8a23ee9261b0aa1470",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a5a0a6d90f09b6229811bb142ff3b529e8a193d1d7284d7a3c8cc30092906cbf",
-				"dweb:/ipfs/QmXj59UxEJFiposCpYpYVBK2pWqvQqt9yFXLxHo6J4Mnno"
+				"bzz-raw://fc82db31415d32d09b3c6fa9dcb7f6fb6625c8d043ea93faeb887be0dbe08ac0",
+				"dweb:/ipfs/QmZJ2FiMjA8ZBGG1Q3a5FyQUV8rqk766tNd3mPXx394VNU"
 			]
 		}
 	},
