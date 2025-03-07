@@ -1,21 +1,42 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.20;
 
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts@5.0.0/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts@5.0.0/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts@5.0.0/token/ERC721/extensions/ERC721Burnable.sol";
+import "@openzeppelin/contracts@5.0.0/access/Ownable.sol";
 
-contract MyNFT is ERC721URIStorage, Ownable {
-    uint256 private _tokenIds;
+contract MyToken is ERC721, ERC721URIStorage, ERC721Burnable, Ownable {
+    constructor(address initialOwner)
+        ERC721("MyToken", "MTK")
+        Ownable(initialOwner)
+    {}
 
-    constructor() ERC721("MyNFT", "MNFT") Ownable(msg.sender) {}
+    function safeMint(address to, uint256 tokenId, string memory uri)
+        public
+        onlyOwner
+    {
+        _safeMint(to, tokenId);
+        _setTokenURI(tokenId, uri);
+    }
 
-    function mintNFT(address recipient, string memory tokenURI) public onlyOwner returns (uint256) {
-        _tokenIds++;
-        uint256 newTokenId = _tokenIds;
+    // The following functions are overrides required by Solidity.
 
-        _safeMint(recipient, newTokenId);
-        _setTokenURI(newTokenId, tokenURI);
+    function tokenURI(uint256 tokenId)
+        public
+        view
+        override(ERC721, ERC721URIStorage)
+        returns (string memory)
+    {
+        return super.tokenURI(tokenId);
+    }
 
-        return newTokenId;
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        override(ERC721, ERC721URIStorage)
+        returns (bool)
+    {
+        return super.supportsInterface(interfaceId);
     }
 }
