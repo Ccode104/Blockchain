@@ -898,11 +898,11 @@
 			]
 		},
 		"erc721.sol": {
-			"keccak256": "0xbfbc530d87d0bddb9db6a6d7590dc63106cae7d1fedc67ad95c2bed9c7c3e7ac",
+			"keccak256": "0x4eaf9ca0132008555b9491cbd0f5e1398100214fbb48f1b8b4c1a5001ae54775",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fb93f28b1fd2c945fdf512dee4793e9900f6399f48634ee6c8497c5d32e56fab",
-				"dweb:/ipfs/QmbSu1am45yNURATnDxTQoqsHFYkR83fU9cx8JnXigCC7T"
+				"bzz-raw://6731b556c9530a03c0ff69c0f3f77b293f2909cac2461fc8ec0b381ac472143c",
+				"dweb:/ipfs/QmNfFZsjXPZszzSyTHpHD3WFG6gkGgPmQoeKeApPXZpZLr"
 			]
 		}
 	},
